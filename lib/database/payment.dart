@@ -59,7 +59,7 @@ class PaymentController extends ChangeNotifier {
           headers: {
             // 'Authorization': 'Bearer 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',
             'Authorization':
-                'Bearer sk_test_51JvN23LbLnT1uHuWUJahSXKDn2LO7cZG4cciGVCw1tUrvEQT6W2kNyOdEhFyCEiwDIwm3mnFMeTbT6hqVWkxcp8V00jAv01FBf',
+                'Bearer removed for security reasons',
             'Content-Type': 'application/x-www-form-urlencoded'
           });
       return jsonDecode(response.body);
