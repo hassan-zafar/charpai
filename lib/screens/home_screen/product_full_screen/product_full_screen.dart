@@ -1,3 +1,4 @@
+import 'package:charpi/providers/product_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -118,11 +119,37 @@ class _ProductFullScreenState extends State<ProductFullScreen> {
                   ),
                 ),
                 Expanded(child: Container()),
-                CustomElevatedButton(
-                    title: 'Add to Cart',
-                    onTap: () {
-                      bottomSheet(context, cartPro);
+                Row(
+                  children: [
+                    Expanded(
+                      child: CustomElevatedButton(
+                          title: 'Add to Cart',
+                          onTap: () {
+                            bottomSheet(context, cartPro);
+                          }),
+                    ),
+                    Consumer<ProductProvider>(builder:
+                        (BuildContext context, ProductProvider productPro, _) {
+                      return IconButton(
+                        onPressed: () {
+                          productPro.setVerify(widget.product.pid);
+                        },
+                        tooltip: 'Verify',
+                        icon: Container(
+                            height: 30,
+                            width: 30,
+                            decoration: BoxDecoration(
+                              color: (productPro.verified
+                                      .contains(widget.product.pid))
+                                  ? Colors.blue
+                                  : Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: const Icon(Icons.done)),
+                      );
                     }),
+                  ],
+                ),
                 const SizedBox(height: 20)
               ],
             ),

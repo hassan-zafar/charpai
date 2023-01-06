@@ -43,12 +43,33 @@ class ListViewScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 150,
-                  width: 150,
-                  child: Image(
-                    image: NetworkImage(product.imageurl),
-                  ),
+                Stack(
+                  children: [
+                    SizedBox(
+                      height: 150,
+                      width: 150,
+                      child: Image(
+                        image: NetworkImage(product.imageurl),
+                      ),
+                    ),
+                    Consumer<ProductProvider>(builder:
+                        (BuildContext context, ProductProvider productPro, _) {
+                      return Positioned(
+                        right: 1,
+                        top: 10,
+                        child: (productPro.verified.contains(product.pid))
+                            ? Container(
+                                height: 30,
+                                width: 30,
+                                decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(16),
+                                ),
+                                child: const Icon(Icons.done))
+                            : Container(),
+                      );
+                    }),
+                  ],
                 ),
                 Text(
                   product.productname,

@@ -10,12 +10,15 @@ class ProductProvider with ChangeNotifier {
   }
   List<Product> _product = <Product>[];
   final List<String> _favorites = <String>[];
+  final List<String> _verified = <String>[];
   List<String> get favorites => _favorites;
+  List<String> get verified => _verified;
   List<Product> get products => _product;
 
   Future<void> load() async {
     _product = await ProductApi().getdata();
     _favorites.addAll(LocalData.getFavroites);
+    _verified.addAll(LocalData.getVerified);
     notifyListeners();
   }
 
@@ -42,6 +45,16 @@ class ProductProvider with ChangeNotifier {
       _favorites.add(value);
     }
     LocalData.setFavroites(_favorites);
+    notifyListeners();
+  }
+
+  setVerify(String value) {
+    if (_verified.contains(value)) {
+      _verified.remove(value);
+    } else {
+      _verified.add(value);
+    }
+    LocalData.setVerified(_verified);
     notifyListeners();
   }
 

@@ -1,3 +1,4 @@
+import 'package:charpi/database/payment.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -95,7 +96,13 @@ class FillCartScreen extends StatelessWidget {
             SizedBox(
                 width: 300,
                 height: 60,
-                child: CustomElevatedButton(title: 'Check out', onTap: () {})),
+                child: CustomElevatedButton(
+                    title: 'Check out',
+                    onTap: () async {
+                      await PaymentController().makePayment(
+                          currency: 'USD',
+                          amount: cartPro.totalPrice().toString());
+                    })),
             const SizedBox(height: 10),
           ],
         ),

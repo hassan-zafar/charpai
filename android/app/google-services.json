@@ -14,6 +14,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "68990521985-7uhr2lg96t6jb5ccth539qh585k8seek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.charpi",
+            "certificate_hash": "d3984de38e8552e8a961dbb0688d5693105fc273"
+          }
+        },
+        {
+          "client_id": "68990521985-b4sq87pc1r6pa54o1173evgdu14d8b3s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.charpi",
+            "certificate_hash": "a08fb573120edf58fcaf1ef3f19d11207bec1d9c"
+          }
+        },
+        {
+          "client_id": "68990521985-i06f34n5v3jd90rv7bgn3m33hoq2afir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.charpi",
+            "certificate_hash": "3e2c5a244c19a4040820bf794459b9e87486416f"
+          }
+        },
+        {
           "client_id": "68990521985-a3sik8kkf5d2nau2t6jh2re1m60fau7u.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +53,13 @@
             {
               "client_id": "68990521985-a3sik8kkf5d2nau2t6jh2re1m60fau7u.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "68990521985-vepslfv151isikll7imj3jmqj5obi57n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.charpi"
+              }
             }
           ]
         }

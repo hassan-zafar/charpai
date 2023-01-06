@@ -31,7 +31,9 @@ class AuthProvider extends ChangeNotifier {
           builder: (BuildContext context) => const PhoneNumberScreen(),
         ),
       );
-    } else if (_registerKey.currentState!.validate()) {
+    } 
+    else
+     if (_registerKey.currentState!.validate()) {
       String? url = '';
       _isRegsiterScreenLoading = true;
       notifyListeners();

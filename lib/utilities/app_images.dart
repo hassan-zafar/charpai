@@ -28,7 +28,7 @@ class AppImages {
 
 //Favorite
   static String get fvrtSelected => 'assets/icons/heartfill.png';
-  static String get fvrtUnselected => 'assets/icons/heart.png';
+  static String get fvrtUnselected => 'assets/icons/Heart.png';
   //drwaer
   static String get drawer => 'assets/icons/drawer.png';
 //background

@@ -3,13 +3,14 @@ import '../../models/app_user/app_user.dart';
 import '../../widgets/custom_widgets/custom_toast.dart';
 import 'user_api.dart';
 
-
 class AuthMethods {
   static final FirebaseAuth _auth = FirebaseAuth.instance;
 
   static User? get getCurrentUser => _auth.currentUser;
   static String get uid => _auth.currentUser?.uid ?? '';
- static String get phoneNumber => _auth.currentUser?.phoneNumber ?? '';
+  // 'hDS8mbQbD8Sm6LAAYaiN59KPx5o1';
+  static String get phoneNumber => _auth.currentUser?.phoneNumber ?? '';
+  // '+923000000000';
 
   Future<int> verifyOTP(String verificationId, String otp) async {
     try {

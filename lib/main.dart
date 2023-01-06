@@ -1,6 +1,7 @@
 import 'package:charpi/screens/auth/phone_registration/phone_number_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:provider/provider.dart';
 import 'database/app_user/auth_method.dart';
 import 'database/local_data.dart';
@@ -15,6 +16,8 @@ import 'screens/screens.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Stripe.publishableKey =
+      'pk_test_51JvN23LbLnT1uHuWgwACQH9Gm250Q9FG4q8dZG5EmNR5Brlhysq3DEAiwZLDICwGiotd5Ux1wmJ12zGv4l0xVwtz00tY9V2jDN';
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
